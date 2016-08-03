@@ -37,7 +37,7 @@ $ npm install
 # start the server
 $ npm start
 ```
-go to [http://localhost:8080](http://localhost:8080) in your browser.
+go to [http://localhost:3000](http://localhost:3000) in your browser.
 
 # Table of Contents
 
@@ -74,7 +74,7 @@ After you have installed all dependencies you can now run the app with:
 npm start
 ```
 
-It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:8080`.
+It will start a local server using `webpack-dev-server` which will watch, build (in-memory), and reload for you. The port will be displayed to you as `http://localhost:3000`.
 
 ## Developing
 

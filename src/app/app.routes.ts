@@ -1,13 +1,19 @@
-import { provideRouter, RouterConfig } from '@angular/router';
+import { Routes } from '@angular/router';
 
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 
-export const routes: RouterConfig = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent}
-];
+import { load } from './shared';
 
-export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
+export const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  {
+    path: 'lazy',
+    loadChildren: load(() => new Promise(resolve => {
+      (require as any).ensure([], require => {
+        resolve(require('./lazy/lazy.module').LazyModule);
+      });
+    }))
+ }
 ];
